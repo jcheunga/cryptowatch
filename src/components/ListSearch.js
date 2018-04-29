@@ -1,0 +1,1 @@
+// Search component which will be take in input and pass into filter function then onto the flatlist
