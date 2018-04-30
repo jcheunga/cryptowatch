@@ -62,7 +62,7 @@ export default class CoinInfo extends React.PureComponent {
     return changes.map((change, index) => (
       <View key={index} style={styles.row}>
         <Text style={styles.coinLabel}>{change[0]}</Text>
-        <Text style={this._checkNumberSign(change[1])}>{ parseFloat(change[1]) > 0 ? `+${change[1]}%` : parseFloat(change[1]) < 0 ? `-${change[1]}%` : change[1]}</Text>
+        <Text style={this._checkNumberSign(change[1])}>{ parseFloat(change[1]) > 0 ? `+${change[1]}%` : `${change[1]}%`}</Text>
       </View>
     ));
   }

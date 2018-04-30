@@ -1,4 +1,4 @@
-package com.example;
+package com.favcoins;
 
 import com.reactnativenavigation.controllers.SplashActivity;
 
