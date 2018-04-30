@@ -52,7 +52,7 @@ export default class FavouriteCoinInfo extends React.PureComponent {
     return changes.map((change, index) => (
       <View key={index} style={styles.row}>
         <Text style={styles.coinLabel}>{change[0]}</Text>
-        <Text style={this._checkNumberSign(change[1])}>{ parseFloat(change[1]) > 0 ? `+${change[1]}%` : change[1]}</Text>
+        <Text style={this._checkNumberSign(change[1])}>{ parseFloat(change[1]) > 0 ? `+${change[1]}%` : parseFloat(change[1]) < 0 ? `-${change[1]}%` : change[1]}</Text>
       </View>
     ));
   }
@@ -98,7 +98,7 @@ export default class FavouriteCoinInfo extends React.PureComponent {
         this._toLocaleString(coin['available_supply'])
       ],
       [
-        '24h Vol:',
+        `24h Vol: ${this._getCurrencySymbol(currency)}`,
         this._toLocaleString( coin[`24h_volume_${this._toLowerCase(currency)}`] ? coin[`24h_volume_${this._toLowerCase(currency)}`] : 'price_usd')
       ],
     ];
